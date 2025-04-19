@@ -17,10 +17,14 @@ const handleInsertNode = (folderId,item,isFolder) => {
     <div className='h-screen p-3'>
         <div className='p-1 '>
           <div>
-            <Folder handleInsertNode={handleInsertNode}  explorer={explorer}/>
+          {folderData.map((rootNode) => (
+                <Folder
+                    key={rootNode.id}
+                    explorer={rootNode}
+                    handleInsertNode={handleInsertNode}
+                />
+            ))}
           </div>
-          
-          
         </div>
     </div>
   )
